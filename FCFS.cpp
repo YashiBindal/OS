@@ -5,31 +5,29 @@ using namespace std;
 int main()
 {   int n;
     cin>>n;                  //number of processes in schedular
-	int AT[n],BT[n]; 
+    int AT[n],BT[n]; 
     for(int i=0;i<n;i++)    //input AT and BT
-    {
-            cin>>AT[i];
-          	cin>>BT[i];
-    }
+       {
+        cin>>AT[i];
+        cin>>BT[i];
+       }
     vector< pair<int,int> > vect;  // linking AT and BT using vector pair
     for (int i=0; i<n; i++)
     vect.push_back( make_pair(AT[i],BT[i]) );
        
-	sort(vect.begin(), vect.end());  //for sorting AT
+    sort(vect.begin(), vect.end());  //for sorting AT
  
     int CT[n],TAT[n],WT[n];
-    CT[0]=BT[0];
+    
     for(int i=0;i<n;i++)
-    {   
-    	CT[i]=CT[i-1]+BT[i];       //caculating burst time
-     }
+      CT[i]=CT[i-1]+BT[i];    //caculating burst time
 	
-	for(int i=0;i<n;i++)
+    for(int i=0;i<n;i++)
 	{
-		TAT[i]=CT[i]-AT[i];  //calculating Turn around time
-		WT[i]=TAT[i]-BT[i];  //calculating waiting time
+	TAT[i]=CT[i]-AT[i];  //calculating Turn around time
+	WT[i]=TAT[i]-BT[i];  //calculating waiting time
 	}
-	for(int i=0;i<n;i++)  //To print value of CT,TAT,WT
+    for(int i=0;i<n;i++)     //To print value of CT,TAT,WT for each process
 	{
 		cout<<CT[i]<<" "<<TAT[i]<<" "<<WT[i]<<endl;
 	}
