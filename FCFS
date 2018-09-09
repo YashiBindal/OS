@@ -4,8 +4,8 @@
 using namespace std;
 int main()
 {   int n;
-    cin>>n;                 //number of processes in schedular
-	  int AT[n],BT[n]; 
+    cin>>n;                 //number of processes in schedular   
+    int AT[n],BT[n]; 
     for(int i=0;i<n;i++)    //input AT and BT
     {
       cin>>AT[i];
@@ -15,23 +15,23 @@ int main()
    for (int i=0; i<n; i++)
    vect.push_back( make_pair(AT[i],BT[i]) );
        
-	 sort(vect.begin(), vect.end());  //for sorting AT
+   sort(vect.begin(), vect.end());  //for sorting AT
  
    int CT[n],TAT[n],WT[n];
    for(int i=0;i<n;i++)
     {   
     	CT[i]=CT[i-1]+BT[i];   //calculating completion time
-		  TAT[i]=CT[i]-AT[i];   //calculating Turn around time
-		  WT[i]=TAT[i]-BT[i];  //caculating Wating time
-		  while(WT[i]<0)      //to check negative wating time(happens when CPU is ideal i.e. no process is available for a arrival time) 
-		    {
+        TAT[i]=CT[i]-AT[i];   //calculating Turn around time
+	WT[i]=TAT[i]-BT[i];  //caculating Wating time
+        while(WT[i]<0)      //to check negative wating time(happens when CPU is ideal i.e. no process is available for a arrival time)  
+	{
           WT[i]=WT[i]+1;
-			    CT[i]=CT[i]+1;   
-			    TAT[i]=TAT[i]+1;
-		     }
-	   }
+          CT[i]=CT[i]+1;   
+	  TAT[i]=TAT[i]+1;
+         }
+     }
 	
-	for(int i=0;i<n;i++)  //To print value of CT,TAT,WT
+     for(int i=0;i<n;i++)  //To print value of CT,TAT,WT
 	{
 		cout<<CT[i]<<" "<<TAT[i]<<" "<<WT[i]<<endl;
 	}
