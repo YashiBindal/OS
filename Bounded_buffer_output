@@ -1,0 +1,36 @@
+1. Produces 2.Consumer 3. Exit
+
+2
+Consumer is waiting
+1. Produces 2.Consumer 3. Exit
+1
+Producer produces1Item
+1. Produces 2.Consumer 3. Exit
+1
+Producer produces2Item
+1. Produces 2.Consumer 3. Exit
+2
+Consumer Consumes1th item
+1. Produces 2.Consumer 3. Exit
+2
+Consumer Consumes2th item
+1. Produces 2.Consumer 3. Exit
+1
+Producer produces3Item
+1. Produces 2.Consumer 3. Exit
+1
+Producer produces4Item
+1. Produces 2.Consumer 3. Exit
+1
+Producer produces5Item
+1. Produces 2.Consumer 3. Exit
+2
+Consumer Consumes3th item
+1. Produces 2.Consumer 3. Exit
+1
+Producer produces6Item
+1. Produces 2.Consumer 3. Exit
+2
+Consumer Consumes4th item
+1. Produces 2.Consumer 3. Exit
+3
